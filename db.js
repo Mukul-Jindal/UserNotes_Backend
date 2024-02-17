@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
-
-let username = process.env.USERNAME;
-let password = process.env.PASSWORD;
-const mongoURI = `mongodb+srv://${username}:${password}@usernotes.99f5ncv.mongodb.net/?retryWrites=true&w=majority`;
+require('dotenv').config();
+const mongoURI = process.env.DATABASE_URL;
 
 const connectToMongo = async () => {
     mongoose.connect(mongoURI, {
