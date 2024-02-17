@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-const username = "audience";
-const password = 'audience';
+let username = process.env.USERNAME;
+let password = process.env.PASSWORD;
 const mongoURI = `mongodb+srv://${username}:${password}@usernotes.99f5ncv.mongodb.net/?retryWrites=true&w=majority`;
 
 const connectToMongo = async () => {
